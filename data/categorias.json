@@ -1,0 +1,28 @@
+[
+    {
+        "nombre": "Polos",
+        "url": "/categoria/polos.html",
+        "imagen": "/img/cat-1.jpg"
+    },
+    {
+        "nombre": "Poleras",
+        "url": "/categoria/poleras.html",
+        "imagen": "/img/cat-2.jpg"
+    },
+    {
+        "nombre": "Jeans",
+        "url": "/categoria/jeans.html",
+        "imagen": "/img/cat-3.jpg"
+    },
+    {
+        "nombre": "Zapatillas",
+        "url": "/categoria/zapatillas.html",
+        "imagen": "/img/cat-6.jpg"
+    },
+    {
+        "nombre": "Jean´s",
+        "url": "/categoria/zapatillas.html",
+        "imagen": "/img/jeans.webp"
+    }
+    
+]
