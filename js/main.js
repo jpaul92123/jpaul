@@ -13,17 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let jsonFiles = [];
 
     switch (htmlFileName) {
-        case 'polos.html':
-            jsonFiles = ['productos.json'];
+        case 'cat.html':
+            jsonFiles = ['cat1.json'];
             break;
-        case 'poleras.html':
-            jsonFiles = ['productos2.json'];
+        case 'cat2.html':
+            jsonFiles = ['cat2.json'];
             break;
-        case 'jeans.html':
-            jsonFiles = ['productos3.json'];
+        case 'cat3.html':
+            jsonFiles = ['cat3.json'];
+            break;
+        case 'cat4.html':
+            jsonFiles = ['cat4.json'];
+            break;
+        case 'cat5.html':
+            jsonFiles = ['cat5.json'];
+            break;
+        case 'cat6.html':
+            jsonFiles = ['cat6.json'];
             break;
         case 'stock.html':
-            jsonFiles = ['productos.json', 'productos2.json', 'productos3.json'];
+            jsonFiles = ['cat1.json','cat2.json','cat3.json','cat4.json','cat5.json','cat6.json'];
             break;
         default:
             console.error('No se encontró un archivo JSON correspondiente para este HTML.');

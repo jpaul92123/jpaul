@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>E-Sinti-Jean´s</title>
+  <title id="nombre-categoria2">E-Sinti</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="Free HTML Templates" name="keywords" />
   <meta content="Free HTML Templates" name="description" />
@@ -61,12 +61,10 @@
       <li class="has-submenu">
         <a href=""><i class="fas fa-th-large"></i> Categoría</a>
         <ul class="submenu">
-          <li><span style="font-weight: 700; color: #e8bf0a;"> Jean´s/Leggins</span></li>
-          <li><a href="polos.html"> Polos/Camiseros</a></li>
-          <li><a href="poleras.html"> Poleras/Chompas</a></li>
-          <li><a href="zapatillas.html"> Zapatillas</a></li>
+            <ul id="menu-categorias2" class="submenu overflow-hidden text-category " style="height: 410px">
+            </ul>
         </ul>
-      </li>
+    </li>
     </ul>
   </nav>
 
@@ -82,12 +80,8 @@
         <nav
           class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
           id="navbar-vertical">
-          <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-            <a href="polos.html" class="nav-item nav-link ">Polos/Camiseros</a>
-            <a href="poleras.html" class="nav-item nav-link ">Poleras/Chompas</a>
-            <a href="#" class="nav-item nav-link active">Jean´s/Leggins</a>
-            <a href="zapatillas.html" class="nav-item nav-link">Zapatillas</a>
-          </div>
+          <ul id="menu-categorias" class="submenu overflow-hidden text-category " style="height: 410px">
+          </ul>
         </nav>
       </div>
       <div class="col-lg-9">
@@ -118,7 +112,7 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
           <div class="text-center mb-4">
             <h2 class="section-title px-5">
-              <span class="px-2">Jean´s y Leggins</span>
+              <span class="px-2" id="nombre-categoria"></span>
             </h2>
           </div>
           <div class="col-lg-6  text-left">
@@ -230,6 +224,7 @@
 
   <!-- Template Javascript -->
   <script src="/js/script.js"></script>
+  <script src="/js/menu-categorias.js"></script>
 </body>
 
 </html>

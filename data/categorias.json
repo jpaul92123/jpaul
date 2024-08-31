@@ -1,34 +1,34 @@
 [
     {
         "nombre": "Polos",
-        "url": "/categoria/polos.html",
+        "url": "/categoria/cat1.html",
         "imagen": "/img/cat-1.jpg"
     },
     {
         "nombre": "Poleras",
-        "url": "/categoria/poleras.html",
+        "url": "/categoria/cat2.html",
         "imagen": "/img/cat-2.jpg"
     },
     {
         "nombre": "Chompas",
-        "url": "/categoria/jeans.html",
+        "url": "/categoria/cat3.html",
         "imagen": "/img/cat-3.jpg"
     },
     {
         "nombre": "Pantalones",
-        "url": "/categoria/zapatillas.html",
+        "url": "/categoria/cat4.html",
         "imagen": "/img/cat-4.jpg"
     }
     ,
     {
         "nombre": "Shorts",
-        "url": "/categoria/poleras.html",
+        "url": "/categoria/cat5.html",
         "imagen": "/img/cat-5.jpg"
     }
     ,
     {
         "nombre": "Zapatillas",
-        "url": "/categoria/poleras.html",
+        "url": "/categoria/cat6.html",
         "imagen": "/img/cat-6.jpg"
     }
   

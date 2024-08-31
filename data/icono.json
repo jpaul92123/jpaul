@@ -1,8 +1,9 @@
 {
-    "icono": {
-      "imagen": "/img/watsapp-icon.webp",
-      "numero": "935909756"
-    },
-    "favicon": "ruta/a/tu/favicon.ico"
-  }
-  
+  "icono": {
+    "imagen": "/img/watsapp-icon.webp",
+    "numero": "935909756",
+    "direccion": "Av. Ejemplo 123, Ciudad, País",
+    "correo": "contacto@ejemplo.com"
+  },
+  "favicon": "ruta/a/tu/favicon.ico"
+}

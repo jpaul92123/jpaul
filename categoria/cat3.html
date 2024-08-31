@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>E-Sinti-zapatillas</title>
+  <title id="nombre-categoria2">E-Sinti</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="Free HTML Templates" name="keywords" />
   <meta content="Free HTML Templates" name="description" />
@@ -54,7 +54,6 @@
         <span class="text-primary font-weight-bold border px-3 mr-1">E</span>Sinti
       </h1>
     </a>
-
     <a class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i> Menú</a>
     <ul class="menu">
       <li><a href="/index.html"><i class="fas fa-home"></i> Inicio</a></li>
@@ -62,13 +61,10 @@
       <li class="has-submenu">
         <a href=""><i class="fas fa-th-large"></i> Categoría</a>
         <ul class="submenu">
-          <li><span style="font-weight: 700; color: #e8bf0a;"> Zapatillas</span></li>
-          <li><a href="zapatillas.html"> Polos/Camiseros</a></li>
-          <li><a href="poleras.html"> Poleras/Chompas</a></li>
-          <li><a href="jeans.html"> Jean´S/Leggins</a></li>
-          
+            <ul id="menu-categorias2" class="submenu overflow-hidden text-category " style="height: 410px">
+            </ul>
         </ul>
-      </li>
+    </li>
     </ul>
   </nav>
 
@@ -84,17 +80,12 @@
         <nav
           class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
           id="navbar-vertical">
-          <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-            <a href="polos.html" class="nav-item nav-link ">Polos/Camiseros</a>
-            <a href="poleras.html" class="nav-item nav-link ">Poleras/Chompas</a>
-            <a href="jeans.html" class="nav-item nav-link">Jean´s/Leggins</a>
-            <a href="#" class="nav-item nav-link active">Zapatillas</a>
-          </div>
+          <ul id="menu-categorias" class="submenu overflow-hidden text-category " style="height: 410px">
+          </ul>
         </nav>
       </div>
       <div class="col-lg-9">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-          
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -110,12 +101,6 @@
                   <a class="text-dark px-2" href="">
                     <i class="fab fa-facebook-f"></i>
                   </a>
-                  <a class="text-dark px-2" href="">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a class="text-dark px-2" href="">
-                    <i class="fab fa-instagram"></i>
-                  </a>
                   <a class="text-dark pl-2" href="">
                     <i class="fab fa-youtube"></i>
                   </a>
@@ -127,7 +112,7 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
           <div class="text-center mb-4">
             <h2 class="section-title px-5">
-              <span class="px-2">Zapatillas</span>
+              <span class="px-2" id="nombre-categoria"></span>
             </h2>
           </div>
           <div class="col-lg-6  text-left">
@@ -146,24 +131,9 @@
           <div id="resultados" class="container overlay overlay-content"></div>
           <!-- fin Cuerpo del buscador -->
           <section>
-
-            <!-- BORRAR CUANDO HAYA STOCK -->
-            <!-- Page Header Start -->
-            <div class="container-fluid bg-secondary mb-5">
-              <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-                <h1 class="font-weight-semi-bold text-uppercase mb-3">Sin Stock!!</h1>
-                <div class="d-inline-flex">
-                  <p class="m-0"><a href="/index.html">Inicio</a></p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Page Header End -->
-          <section>
             <button class="tablink" onclick="openPage('CATEGORY 1', this, '#e8bf0a')" id="defaultOpen">NIÑO </button>
             <button class="tablink" onclick="openPage('CATEGORY 2', this, '#e8bf0a')">HOMBRE </button>
             <button class="tablink" onclick="openPage('CATEGORY 3', this, '#e8bf0a')">MUJER </button>
-
 
             <!--CATEGORIA 1-->
             <div id="CATEGORY 1" class="tabcontent ">
@@ -171,6 +141,7 @@
                 <div class="gallery" id="niños-gallery"></div>
               </div>
             </div>
+
 
 
             <!--CATEGORIA 2-->
@@ -186,7 +157,10 @@
                 <div class="gallery" id="mujeres-gallery"></div>
               </div>
             </div>
+
           </section>
+
+
         </div>
       </div>
     </div>
@@ -250,6 +224,7 @@
 
   <!-- Template Javascript -->
   <script src="/js/script.js"></script>
+  <script src="/js/menu-categorias.js"></script>
 </body>
 
 </html>

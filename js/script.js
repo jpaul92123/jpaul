@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -17,8 +17,8 @@
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -28,7 +28,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -41,20 +41,20 @@
         autoplay: true,
         smartSpeed: 1000,
         responsive: {
-            0:{
-                items:2
+            0: {
+                items: 2
             },
-            576:{
-                items:3
+            576: {
+                items: 3
             },
-            768:{
-                items:4
+            768: {
+                items: 4
             },
-            992:{
-                items:5
+            992: {
+                items: 5
             },
-            1200:{
-                items:6
+            1200: {
+                items: 6
             }
         }
     });
@@ -68,17 +68,17 @@
         autoplay: true,
         smartSpeed: 1000,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:2
+            576: {
+                items: 2
             },
-            768:{
-                items:3
+            768: {
+                items: 3
             },
-            992:{
-                items:4
+            992: {
+                items: 4
             }
         }
     });
@@ -99,7 +99,7 @@
         }
         button.parent().parent().find('input').val(newVal);
     });
-    
+
 })(jQuery);
 
 
@@ -128,7 +128,7 @@ function buscarProducto() {
         return; // Si el input está vacío, no mostrar resultados
     }
 
-    const resultadosFiltrados = productos.filter(producto => 
+    const resultadosFiltrados = productos.filter(producto =>
         producto.nombre.toLowerCase().includes(query) ||
         (producto.talla && producto.talla.toLowerCase().includes(query)) ||
         (producto.descripcion && producto.descripcion.toLowerCase().includes(query))
@@ -140,7 +140,7 @@ function buscarProducto() {
         resultadosFiltrados.forEach(producto => {
             const nombreFormateado = encodeURIComponent(`Me interesa el producto ${producto.nombre}`);
             const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}`;
-            
+
             const divProducto = document.createElement('div');
             divProducto.classList.add('producto');
             const imgElement = `<img src="${producto.imagen || 'default-image.jpg'}" alt="${producto.nombre}" onerror="imagenError(this)">`;
@@ -225,18 +225,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let jsonFileName = '';
 
     switch (htmlFileName) {
-        case 'polos.html':
-            jsonFileName = 'productos.json';
+        case 'cat1.html':
+            jsonFileName = 'cat1.json';
             break;
-        case 'poleras.html':
-            jsonFileName = 'productos2.json';
+        case 'cat2.html':
+            jsonFileName = 'cat2.json';
             break;
-        case 'jeans.html':
-            jsonFileName = 'productos3.json';
+        case 'cat3.html':
+            jsonFileName = 'cat3.json';
             break;
-        // case 'stock.html':
-        //     jsonFileName = 'productos.json';
-        //     break;
+        case 'cat4.html':
+            jsonFileName = 'cat4.json';
+            break;
+        case 'cat5.html':
+            jsonFileName = 'cat5.json';
+            break;
+        case 'cat6.html':
+            jsonFileName = 'cat6.json';
+            break;
         default:
             console.error('No se encontró un archivo JSON correspondiente para este HTML.');
             return;
@@ -248,10 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Cargar todos los archivos JSON antes de habilitar el buscador
 Promise.all([
-    cargarJSON('productos.json'),
-    cargarJSON('productos2.json'),
-    cargarJSON('productos3.json'),
-    // cargarJSON('productos4.json')
+    cargarJSON('cat1.json'),
+    cargarJSON('cat2.json'),
+    cargarJSON('cat3.json'),
+    cargarJSON('cat4.json'),
+    cargarJSON('cat5.json'),
+    cargarJSON('cat6.json')
+    // cargarJSON('cat#.json'); // Descomentar si necesitas cargar otro archivo
+    
 ]).then(() => {
     // Los productos están cargados, ahora se puede buscar
     console.log('Todos los productos han sido cargados');
@@ -297,10 +307,13 @@ if (window.location.pathname.endsWith('stock.html')) {
     }
 
     // Cargar las galerías
-    cargarGaleria('productos.json');
-    cargarGaleria('productos2.json');
-    cargarGaleria('productos3.json');
-    // cargarGaleria('productos4.json'); // Descomentar si necesitas cargar otro archivo
+    cargarGaleria('cat1.json');
+    cargarGaleria('cat2.json');
+    cargarGaleria('cat3.json');
+    cargarGaleria('cat1.json');
+    cargarGaleria('cat2.json');
+    cargarGaleria('cat3.json');
+    // cargarGaleria('cat#.json'); // Descomentar si necesitas cargar otro archivo
 
 }
 
@@ -308,7 +321,7 @@ if (window.location.pathname.endsWith('stock.html')) {
 
 
 // MENU CATEGORIA DE PRODUCTOS ********
-        
+
 
 // PRIMERO:::::::::::::::::::::::::
 
@@ -366,7 +379,7 @@ document.getElementById("defaultOpen").click();
 /*********************************************************/
 
 // MENU DESPLEGABLE PARA DE LAS CATEGORIAS CUANDO SE HACE SCROL
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menuToggle');
     const menu = document.querySelector('.menu');
     const submenuToggle = document.querySelector('.has-submenu > a');
@@ -375,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollY = 0;
 
     // Mostrar el navbar después de hacer scroll dos veces
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50 && window.innerWidth <= 976) {
             scrollCount++;
             if (scrollCount >= 2) {
@@ -395,12 +408,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Mostrar/ocultar el menú al hacer clic en el botón
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function () {
         menu.classList.toggle('showm');
     });
 
     // Mostrar/ocultar el submenú en pantallas pequeñas
-    submenuToggle.addEventListener('click', function(e) {
+    submenuToggle.addEventListener('click', function (e) {
         e.preventDefault();
         const submenu = submenuToggle.nextElementSibling;
         submenu.classList.toggle('showm');
@@ -409,8 +422,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
- // Función para cargar el JSON y aplicar la configuración del ícono
- async function loadIcon() {
+// Función para cargar el JSON y aplicar la configuración del ícono
+async function loadIcon() {
     const response = await fetch('/data/icono.json');
     const data = await response.json();
     const icono = data.icono;
@@ -419,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('whatsapp-img').src = icono.imagen;
 
     // Configurar el evento de clic para redireccionar a WhatsApp
-    document.getElementById('whatsapp-icon').onclick = function() {
+    document.getElementById('whatsapp-icon').onclick = function () {
         window.location.href = `https://wa.me/${icono.numero}`;
     };
 }
@@ -428,6 +441,27 @@ document.addEventListener('DOMContentLoaded', function() {
 loadIcon();
 
 //*************************************************** */
+//
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('/data/icono.json') // Asegúrate de que la ruta sea correcta
+        .then(response => response.json())
+        .then(data => {
+            // Actualiza los elementos con la información del JSON
+            const direccionSpan = document.getElementById('direccion');
+            const correoSpan = document.getElementById('correo');
+            const iconoImagen = document.getElementById('icono-imagen');
+            const iconoNumero = document.getElementById('icono-numero');
+            
+            // Obtén el objeto icono del JSON
+            const iconoData = data.icono; 
 
+            // Asigna los datos al HTML
+            direccionSpan.textContent = iconoData.direccion;
+            correoSpan.textContent = iconoData.correo;
+            iconoImagen.src = iconoData.imagen;
+            iconoNumero.textContent = iconoData.numero;
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
+});
 
 
