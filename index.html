@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>E-Sinti-Inicio</title>
+    <title>E-Sinti-Todo el Stock</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Free HTML Templates" name="keywords" />
     <meta content="Free HTML Templates" name="description" />
@@ -64,10 +64,8 @@
             <li class="has-submenu">
                 <a href=""><i class="fas fa-th-large"></i> Categoría</a>
                 <ul class="submenu">
-                    <li><a href="/categoria/polos.html"> Polos/Camiseros</a></li>
-                    <li><a href="/categoria/poleras.html"> Poleras/Chompas</a></li>
-                    <li><a href="/categoria/jeans.html"> Jeans/Leggins</a></li>
-                    <li><a href="/categoria/zapatillas.html"> Zapatillas</a></li>
+                    <ul id="menu-categorias2" class="submenu overflow-hidden text-category " style="height: 410px">
+                    </ul>
                 </ul>
             </li>
         </ul>
@@ -83,15 +81,13 @@
                     <h6 class="m-0"><i class="fas fa-th-large"></i> Categorias</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
-                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
+                <ul id="menu-categorias" class="submenu overflow-hidden text-category " style="height: 410px">
+                </ul>
+                <!-- <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
                     id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                        <a href="/categoria/polos.html" class="nav-item nav-link ">Polos/Camiseros</a>
-                        <a href="/categoria/poleras.html" class="nav-item nav-link ">Poleras/Chompas</a>
-                        <a href="/categoria/jeans.html" class="nav-item nav-link">Jean´s/Leggins</a>
-                        <a href="/categoria/zapatillas.html" class="nav-item nav-link">Zapatillas</a>
-                    </div>
-                </nav>
+                    <ul id="menu-categorias" class="submenu overflow-hidden text-category " style="height: 410px">
+                    </ul>
+                </nav> -->
             </div>
 
 
@@ -324,6 +320,7 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/menu-categorias.js"></script>
     <script>
         if (window.location.pathname.endsWith('/stock') || window.location.pathname.endsWith('/index')) {
             window.location.href = window.location.pathname + '.html';

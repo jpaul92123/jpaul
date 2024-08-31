@@ -173,13 +173,15 @@ sup {
 }
 
 a {
-  color: #e8bf0a;
+  color: var(--dark);
+  font-weight: 500;
   text-decoration: none;
   background-color: transparent;
 }
 
+
 a:hover {
-  color: var(--gray-dark);
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -10540,6 +10542,7 @@ a.text-dark:focus {
 
 .text-decoration-none {
   text-decoration: none !important;
+  text-align: center;
 }
 
 .text-break {
@@ -11066,6 +11069,5 @@ category-section {
 .modal-content {
   padding: 20px;
 }
-
 
 

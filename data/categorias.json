@@ -10,19 +10,27 @@
         "imagen": "/img/cat-2.jpg"
     },
     {
-        "nombre": "Jeans",
+        "nombre": "Chompas",
         "url": "/categoria/jeans.html",
         "imagen": "/img/cat-3.jpg"
     },
     {
-        "nombre": "Zapatillas",
+        "nombre": "Pantalones",
         "url": "/categoria/zapatillas.html",
-        "imagen": "/img/cat-6.jpg"
-    },
-    {
-        "nombre": "Jean´s",
-        "url": "/categoria/zapatillas.html",
-        "imagen": "/img/jeans.webp"
+        "imagen": "/img/cat-4.jpg"
     }
+    ,
+    {
+        "nombre": "Shorts",
+        "url": "/categoria/poleras.html",
+        "imagen": "/img/cat-5.jpg"
+    }
+    ,
+    {
+        "nombre": "Zapatillas",
+        "url": "/categoria/poleras.html",
+        "imagen": "/img/cat-6.jpg"
+    }
+  
     
 ]
