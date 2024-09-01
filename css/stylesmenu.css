@@ -4,16 +4,24 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #6c757d; /* Fondo ligeramente transparente */
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: white;
     padding: 15px;
-    display: none; /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     z-index: 1000;
 }
 
 /* Botón del menú */
 .menu-toggle {
-    display: none; /* Oculto por defecto en pantallas grandes */
+    display: none;
+    /* Oculto por defecto en pantallas grandes */
     font-size: 24px;
     background: none;
     border: none;
@@ -48,44 +56,53 @@
 
 /* Estilo hover */
 .menu a:hover {
-    color: #dcdcdc; /* Gris claro */
+    color: #dcdcdc;
+    /* Gris claro */
 }
 
 /* Estilo del submenú */
 .submenu {
-    display: block; /* Ocultar submenú por defecto */
+    display: block;
+    /* Ocultar submenú por defecto */
     list-style: none;
     padding-left: 20px;
 }
 
 .has-submenu:hover .submenu {
-    display: block; /* Mostrar submenú al hacer hover en pantallas grandes */
+    display: block;
+    /* Mostrar submenú al hacer hover en pantallas grandes */
 }
 
 /* Mostrar navbar en pantallas pequeñas */
 @media (max-width: 976px) {
     .navbar-scrol {
-        display: block; /* Oculto por defecto en pantallas pequeñas */
+        display: block;
+        /* Oculto por defecto en pantallas pequeñas */
     }
 
     .menu {
-        display: none; /* Ocultar menú por defecto */
+        display: none;
+        /* Ocultar menú por defecto */
     }
 
     .menu-toggle {
-        display: block; /* Mostrar botón del menú */
+        display: block;
+        /* Mostrar botón del menú */
     }
 
     .menu.showm {
-        display: block; /* Mostrar menú cuando esté activo */
+        display: block;
+        /* Mostrar menú cuando esté activo */
     }
 
     .submenu.showm {
-        display: block; /* Mostrar submenú cuando esté activo */
+        display: block;
+        /* Mostrar submenú cuando esté activo */
     }
 
     /* Mostrar navbar cuando se ha hecho scroll */
     .show-navbar {
-        display: block; /* Mostrar navbar cuando se ha hecho scroll */
+        display: block;
+        /* Mostrar navbar cuando se ha hecho scroll */
     }
 }

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 nav: true,
                 rtl: true, // Esto permite que el carrusel se desplace hacia la izquierda
                 autoplay: true, // Activa el autoplay
-                autoplayTimeout: 2000, // Cambia cada 3 segundos
+                autoplayTimeout: 1500, // Cambia cada 3 segundos
                 autoplayHoverPause: true, // Pausa el autoplay al pasar el mouse
                 responsive: {
                     0: {

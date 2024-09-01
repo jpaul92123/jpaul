@@ -27,12 +27,14 @@
   --danger: #dc3545;
   --light: #FFFFFF;
   --dark: #1C1C1C;
+
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Poppins", sans-serif;
+
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -49,7 +51,7 @@
 }
 
 html {
-  font-family:var(--font-family-sans-serif);
+  font-family: var(--font-family-sans-serif);
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -78,7 +80,6 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
-
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
@@ -3021,12 +3022,12 @@ fieldset:disabled a.btn {
 .show>.btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(222, 222, 223, 0.5);
 }
-
+/* 
 .btn-dark {
   color: #fff;
   background-color: #1C1C1C;
   border-color: #1C1C1C;
-}
+} */
 
 .btn-dark:hover {
   color: #fff;
@@ -6507,7 +6508,7 @@ a.close.disabled {
 }
 
 .carousel-fade .carousel-item {
-  opacity: 0;
+  opacity: 1;
   transition-property: opacity;
   transform: none;
 }
@@ -6578,7 +6579,7 @@ a.close.disabled {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  display: inline-block;
+  display: none;
   width: 20px;
   height: 20px;
   background: no-repeat 50% / 100% 100%;
@@ -6731,7 +6732,14 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 a.bg-secondary:hover,
@@ -6816,7 +6824,7 @@ button.bg-dark:focus {
 }
 
 .border {
-  border: 1px solid #EDF1FF !important;
+  border: 2px solid #EDF1FF !important;
 }
 
 .border-top {
@@ -10670,6 +10678,7 @@ a.text-dark:focus {
 
 .font-weight-semi-bold {
   font-weight: 600;
+  color: var(--light)
 }
 
 [class^=flaticon-]:before,
@@ -10713,7 +10722,7 @@ a.text-dark:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgb(8 8 8 / 50%);
   z-index: 1;
 }
 
@@ -10864,7 +10873,7 @@ a.text-dark:focus {
 
 /*  UTILIDADES*/
 
- .contenedor {
+.contenedor {
   max-width: 120rem;
   width: 95%;
   margin: 0 auto;
@@ -10918,20 +10927,23 @@ a.text-dark:focus {
   z-index: 1000;
   animation: action 1s infinite alternate;
 }
+
 #whatsapp-icon img {
   width: 120px;
- 
+
 }
+
 /* Style tab links */
 
 .tablink,
 .tablink2,
 .tablink3 {
-  background-color: #6c757d;
+  background-color:#090909;
   color: white;
   float: left;
   border: none;
   outline: none;
+  margin-right: 0.5rem;
   cursor: pointer;
   padding: 2px;
   font-size: 1rem;
@@ -10950,7 +10962,7 @@ a.text-dark:focus {
 .tablink:hover,
 .tablink2:hover,
 .tablink3:hover {
-  background-color: var(--warning);
+  background-color: var(--warning)!important
 }
 
 
@@ -11072,4 +11084,12 @@ category-section {
   padding: 20px;
 }
 
-
+.enviosgratis {
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 9;
+  padding: 2px 0;
+  left: 0 ;
+ }

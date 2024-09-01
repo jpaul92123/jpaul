@@ -34,14 +34,15 @@
     <div class="row align-items-center py-3 px-xl-5">
       <div class="col-lg-3 d-none d-lg-block">
         <a href="" class="text-decoration-none">
-          <h1 class="m-0 display-5 font-weight-semi-bold">
-            <span class="text-primary font-weight-bold border px-3 mr-1">E</span>Sinti
+          <h1 class="m-3 display-5 font-weight-semi-bold">
+            <span class="text-primary font-weight-bold border px-3 mr-0">E</span><span
+              style="color: black;">Sinti</span>
           </h1>
         </a>
       </div>
-
-      <!-- buscador de productos  -->
-
+      <p class="enviosgratis" style="background-color: black; color:white; margin-top: -60px; "> Envios gratis en Lima por compras mayores
+        a  S/.100</p>
+     <!-- buscador de productos  -->
     </div>
   </div>
 
@@ -61,11 +62,13 @@
       <li class="has-submenu">
         <a href=""><i class="fas fa-th-large"></i> Categoría</a>
         <ul class="submenu">
-            <ul id="menu-categorias2" class="submenu overflow-hidden text-category " style="height: 410px">
-            </ul>
+          <ul id="menu-categorias2" class="submenu overflow-hidden text-category " style="height: 410px">
+          </ul>
         </ul>
-    </li>
+      </li>
     </ul>
+    <p class="enviosgratis" style="background-color: black; color:white; ">- Envios gratis en Lima por compras mayores a
+      S/.100 -</p>
   </nav>
 
   <!-- Navbar Start -->
@@ -167,6 +170,22 @@
   </div>
   <!-- Navbar End -->
 
+  <!-- carousel  CATEGORIA-->
+  <!-- Productos Section -->
+  <div class="container-fluid py-5">
+    <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">COLECCION</span></h2>
+    </div>
+    <div class="row px-xl-5">
+      <div class="col">
+        <div class="owl-carousel custom-carousel" id="custom-carousel">
+          <!-- Productos cargados dinámicamente con JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Footer Start -->
   <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
     <div class="row px-xl-5 pt-5">
@@ -224,6 +243,7 @@
 
   <!-- Template Javascript -->
   <script src="/js/script.js"></script>
+  <script src="/js/custom-carousel.js"></script>
   <script src="/js/menu-categorias.js"></script>
 </body>
 
