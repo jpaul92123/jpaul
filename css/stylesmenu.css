@@ -47,7 +47,9 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
 }
+
 
 /* Añadir espacio entre el ícono y el texto */
 .menu a i {
@@ -56,7 +58,7 @@
 
 /* Estilo hover */
 .menu a:hover {
-    color: #dcdcdc;
+    color: gray;
     /* Gris claro */
 }
 

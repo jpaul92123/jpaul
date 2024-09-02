@@ -147,11 +147,11 @@ function buscarProducto() {
             divProducto.innerHTML = `
                 ${imgElement}
                 <div>
-                    <strong>${producto.nombre}</strong> 
+                    <strong>${producto.nombre}</strong>
                     <p>Talla: ${producto.talla || 'N/A'}</p>
                     <p>Descripción: ${producto.descripcion || 'N/A'}</p>
                     <strong>Precio: S/. ${producto.precio.toFixed(2)}</strong><br>
-                    <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Pedir Info</a>
+                    <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Comprar</a>
                 </div>
             `;
             resultados.appendChild(divProducto);
@@ -168,10 +168,10 @@ function createProductItem(product) {
 
     return `
         <div class="gallery-item">
-            <img src="${product.imagen}" alt="${product.nombre}">
+            <a href="#"><img src="${product.imagen}" alt="${product.nombre}"></a>
             <div class="product-name">${product.nombre}</div>
             <div class="product-price">S/ ${product.precio}</div>
-            <a class="ver-producto" href="${whatsappLink}" target="_blank">Pedir info</a>
+            <a class="ver-producto" href="${whatsappLink}" target="_blank">Mas Info</a>
         </div>
     `;
 }
@@ -261,7 +261,7 @@ Promise.all([
     cargarJSON('cat5.json'),
     cargarJSON('cat6.json')
     // cargarJSON('cat#.json'); // Descomentar si necesitas cargar otro archivo
-    
+
 ]).then(() => {
     // Los productos están cargados, ahora se puede buscar
     console.log('Todos los productos han sido cargados');
@@ -310,9 +310,9 @@ if (window.location.pathname.endsWith('stock.html')) {
     cargarGaleria('cat1.json');
     cargarGaleria('cat2.json');
     cargarGaleria('cat3.json');
-    cargarGaleria('cat1.json');
-    cargarGaleria('cat2.json');
-    cargarGaleria('cat3.json');
+    cargarGaleria('cat4.json');
+    cargarGaleria('cat5.json');
+    cargarGaleria('cat6.json');
     // cargarGaleria('cat#.json'); // Descomentar si necesitas cargar otro archivo
 
 }
@@ -448,18 +448,18 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             // Actualiza los elementos con la información del JSON
             const direccionSpan = document.getElementById('direccion');
-            const correoSpan = document.getElementById('correo');
-            const iconoImagen = document.getElementById('icono-imagen');
-            const iconoNumero = document.getElementById('icono-numero');
-            
+            const correoSpan = document.getElementById('correo2');
+            // const iconoImagen = document.getElementById('icono-imagen');
+            const iconoNumero = document.getElementById('telefono');
+
             // Obtén el objeto icono del JSON
-            const iconoData = data.icono; 
+            const iconoData = data.icono;
 
             // Asigna los datos al HTML
             direccionSpan.textContent = iconoData.direccion;
             correoSpan.textContent = iconoData.correo;
-            iconoImagen.src = iconoData.imagen;
-            iconoNumero.textContent = iconoData.numero;
+            // iconoImagen.src = iconoData.imagen;
+            iconoNumero.textContent = iconoData.telefono;
         })
         .catch(error => console.error('Error al cargar el JSON:', error));
 });

@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 productCard.className = 'card custom-carousel-item border-0';
 
                 productCard.innerHTML = `
-                    <div class="card-header custom-carousel-img position-relative overflow-hidden bg-tran
+                    <a href="${item.url}" ><div class="card-header custom-carousel-img position-relative overflow-hidden bg-tran
                     rent border p-0">
                         <img class="img-fluid w-100" src="${item.imagen}" alt="${item.nombre}">
                         <div class="custom-carousel-overlay">
-                            <a href="${item.url}" class="btn btn-light">Visitar</a>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h2 class="mb-3" style="color:white ; text-transform:uppercase ">${item.nombre}</h2>
+                    </div>
                         </div>
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">${item.nombre}</h6>
-                    </div>
+                    </div></a>
+                  
                 `;
 
                 carousel.appendChild(productCard);

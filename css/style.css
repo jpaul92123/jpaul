@@ -11085,11 +11085,16 @@ category-section {
 }
 
 .enviosgratis {
+  background-color: var(--dark);
+  font-weight: 600;
   text-align: center;
   width: 100%;
-  box-sizing: border-box;
   position: absolute;
   z-index: 9;
   padding: 2px 0;
   left: 0 ;
+ }
+ p.enviosgratis:hover {
+  background-color: var(--primary);
+  color: var(--dark);
  }
