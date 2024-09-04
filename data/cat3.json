@@ -1,93 +1,95 @@
 {
-    "niños": [
+    "subcat1": [
         {
-            "nombre": "jean niño",
+            "nombre": "Polo niño o",
             "talla": "2-4-6-8",
             "precio": 15,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/1.png"
+            "imagen": "/img/ni-1.webp",
+            "descripcion": "100% Algodon"
+            
         },
         {
-            "nombre": "jean de hombre estampado",
+            "nombre": "Polo de hombre estampado",
             "talla": "S-M-L-XL",
             "precio": 20,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/2.png"
+            "imagen": "/img/ni-2.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean de hombre blanco",
+            "nombre": "Polo de hombre blanco",
             "talla": "S-M-L-XL",
             "precio": 17,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/3.png"
+            "imagen": "/img/ni-3.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean niño",
+            "nombre": "Polo niño",
             "talla": "2-4-6-8",
             "precio": 15,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/4.png"
+            "imagen": "/img/ni-4.webp",
+            "descripcion": "100% Algodon"
         }
     ],
-    "hombres": [
+    "subcat2": [
         {
-            "nombre": "jean niño",
+            "nombre": "Polo niño",
             "talla": "2-4-6-8",
             "precio": 15,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/5.png"
-        },
-        {
-            "nombre": "jean de hombre estampado",
+            "imagen": "/img/ho-1.webp",
+             "descripcion": "100% Algodon "
+       },
+ 
+    {
+            "nombre": "Polo de hombre estampado",
             "talla": "S-M-L-XL",
             "precio": 20,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/6.png"
+            "imagen": "/img/ni-2.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean de hombre blanco",
+            "nombre": "Polo de hombre blanco",
             "talla": "S-M-L-XL",
             "precio": 17,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/2.png"
+            "imagen": "/img/ni-3.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean niño",
+            "nombre": "Polo niño",
             "talla": "2-4-6-8",
             "precio": 15,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/3.png"
+            "imagen": "/img/ni-4.webp",
+            "descripcion": "100% Algodon"
         }
         
     ],
-    "mujeres": [
+    "subcat3": [
         {
-            "nombre": "jean niño",
+            "nombre": "Polo niño",
             "talla": "2-4-6-8",
             "precio": 15,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/polo-blanco.jpg"
+            "imagen": "/img/mu-1.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean de hombre estampado",
+            "nombre": "Polo de hombre estampado",
             "talla": "S-M-L-XL",
             "precio": 20,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/polo-blanco.jpg"
+            "imagen": "/img/mu-2.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean de hombre blanco",
+            "nombre": "Polo de hombre blanco",
             "talla": "S-M-L-XL",
             "precio": 17,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/polo-blanco.jpg"
+            "imagen": "/img/mu-3.webp",
+            "descripcion": "100% Algodon"
         },
         {
-            "nombre": "jean niño",
+            "nombre": "Polo niño",
             "talla": "2-4-6-8",
             "precio": 15,
-            "url": "productos.html",
-            "imagen": "/img/categoria/hombre/polo-blanco.jpg"
+            "imagen": "/img/mu-4.webp",
+            "descripcion": "100% Algodon"
         }
         
     ]

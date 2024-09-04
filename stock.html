@@ -31,8 +31,11 @@
 <body>
   <!-- Topbar Start -->
   <div class="container-fluid mt-4">
-    <p class="enviosgratis" style="color:white; margin-top: -18px; ">-- Envios gratis en Lima por compras mayores a
-      S/.100 --</p>
+    <p class="enviosgratis" style="color:white; margin-top: -18px;">
+      <i class="fas fa-fire icon-fire"></i>
+      <span id="frase1"></span>
+      <i class="fas fa-fire icon-fire"></i>
+    </p>
     <div class="row align-items-center py-3 px-xl-5">
       <div class="col-lg-3 d-none d-lg-block">
         <a href="/index.html" class="text-decoration-none">
@@ -51,7 +54,8 @@
   <nav id="navbar-scrol" class="navbar-scrol">
     <a href="/index.html" class="text-decoration-none d-block d-lg-none">
       <h1 class="m-0 display-5 font-weight-semi-bold">
-        <span class="text-primary font-weight-bold border px-3 mr-1">E</span>Sinti
+        <span class="text-primary font-weight-bold border px-3 mr-1" style="z-index: 9;">SINTTEX</span><br>
+        <span class="">-EG-</span>
       </h1>
     </a>
     <a class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i> Menú</a>
@@ -67,6 +71,11 @@
         </ul>
       </li>
     </ul>
+    <p class="enviosgratis">
+      <i class="fas fa-fire icon-fire"></i>
+      <span id="frase2"></span>
+      <i class="fas fa-fire icon-fire"></i>
+    </p>
   </nav>
 
   <!-- Navbar Start -->
@@ -139,8 +148,8 @@
 
             <!--CATEGORIA 1-->
             <div id="CATEGORY 1" class="tabcontent ">
-              <div id="niños-section" class="category-section">
-                <div class="gallery" id="niños-gallery"></div>
+              <div id="subcat1-section" class="category-section">
+                <div class="gallery" id="subcat1-gallery"></div>
               </div>
             </div>
 
@@ -148,15 +157,15 @@
 
             <!--CATEGORIA 2-->
             <div id="CATEGORY 2" class="tabcontent">
-              <div id="hombres-section" class="category-section">
-                <div class="gallery" id="hombres-gallery"></div>
+              <div id="subcat2-section" class="category-section">
+                <div class="gallery" id="subcat2-gallery"></div>
               </div>
             </div>
 
             <!--CATEGORIA 3-->
             <div id="CATEGORY 3" class="tabcontent">
-              <div id="mujeres-section" class="category-section">
-                <div class="gallery" id="mujeres-gallery"></div>
+              <div id="subcat3-section" class="category-section">
+                <div class="gallery" id="subcat3-gallery"></div>
               </div>
             </div>
 
@@ -170,38 +179,39 @@
   <!-- Navbar End -->
 
   <!-- Footer Start -->
-  <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
-    <div class="row px-xl-5 pt-5">
-      <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+  <div class=" bg-secondary text-dark mt-1 pt-5">
+    <div class="container-fluid">
+      <div>
         <a href="/index.html" class="text-decoration-none">
-          <h1 class="mb-4 display-5 font-weight-semi-bold">
-            <span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Sinti
+          <h1 class="m-0 display-5 font-weight-semi-bold">
+            <span class="text-primary font-weight-bold border px-3 mr-1" style="z-index: 9;">SINTTEX</span><br>
+            <span class="">-EG-</span>
           </h1>
         </a>
-        <p>
-          "Ropa para niños y adultos, confeccionada con 100% algodón peruano,
-          ofreciendo comodidad, calidad y estilo en cada prenda para toda la
-          familia."
-        </p>
-        <p class="mb-2">
-          <i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street,
-          New York, USA
-        </p>
-        <p class="mb-2">
-          <i class="fa fa-envelope text-primary mr-3"></i>info@example.com
-        </p>
-        <p class="mb-0">
-          <i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890
-        </p>
+        <p style="color:white">"Ropa para niños y adultos, confeccionada con 100% algodón peruano,ofreciendo
+          comodidad, calidad y
+          estilo en cada prenda para toda la familia."</p>
+      </div>
+
+      <div style="color:white">
+        <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i><span id="direccion"></span></p>
+        <p class="mb-2"> <i class="fa fa-envelope text-primary mr-3"></i><span id="correo2"></span></p>
+        <p class="mb-2"> <i class="fa fa-phone text-primary mr-3"></i><span id="telefono"></span></p>
       </div>
 
     </div>
+
+
+
     <div class="row border-top border-light mx-xl-5 py-4">
       <div class="col-md-6 px-xl-0">
         <p class="mb-md-0 text-center text-md-left text-dark">
-          &copy;
-          <a class="text-dark font-weight-semi-bold" href="#">E-SINTI</a>.Todos los derechos reservados.Diseñado por
-          <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">SINTI CORP S.A.C</a>
+          <span style="color:white">&copy;</span>
+          <a class="text-dark font-weight-semi-bold" href="#"><span style="color:white">SINTTEXT</span></a><span
+            style="color:white">.Todos los derechos
+            reservados.Diseñado por</span>
+          <a class="text-dark font-weight-semi-bold" href="#"><span style="color:white">SINTI CORP SAC</span>
+          </a>
         </p>
       </div>
       <div class="col-md-6 px-xl-0 text-center text-md-right">

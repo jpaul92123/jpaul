@@ -23,7 +23,8 @@
     <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="/css/custom-carousel.css">
     <link rel="stylesheet" href="/css/stylesmenu.css">
@@ -35,8 +36,11 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid mt-4">
-        <p class="enviosgratis" style="color:white; margin-top: -18px; ">-- Envios gratis en Lima por compras mayores a
-            S/.100 --</p>
+        <p class="enviosgratis" style="color:white; margin-top: -18px;">
+            <i class="fas fa-fire icon-fire"></i>
+            <span id="frase1"></span>
+            <i class="fas fa-fire icon-fire"></i>
+        </p>
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="/index.html" class="text-decoration-none">
@@ -73,7 +77,11 @@
                 </ul>
             </li>
         </ul>
-        <p class="enviosgratis">Envios gratis por compras mayores a S/.100</p>
+        <p class="enviosgratis">
+            <i class="fas fa-fire icon-fire"></i>
+            <span id="frase2"></span>
+            <i class="fas fa-fire icon-fire"></i>
+        </p>
     </nav>
 
     <!-- Navbar Start -->
@@ -144,16 +152,14 @@
                             <!-- fin Cuerpo del buscador -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active" style="height: 100%">
-                                    <img class="img-fluid" src="img/2.webp" alt="Image" />
+                                    <img id="slide1" class="img-fluid" src="" alt="Image" />
                                     <div
                                         class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                         <div class="p-3" style="max-width: 700px">
-                                            <h4 class="text-light text-uppercase font-weight-medium mb-3">
-                                                10% Off -En su primer pedido.
-                                            </h4>
-                                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">
+
+                                            <h4 class="display-4 text-white font-weight-semi-bold mb-4">
                                                 Coleccion-Masculina.
-                                            </h3>
+                                            </h4>
                                             <a href="categoria/polos.html" class="btn btn-light py-2 px-3">Ver</a>
                                         </div>
                                     </div>

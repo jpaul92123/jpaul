@@ -119,6 +119,45 @@ function cargarJSON(nombreArchivo) {
 }
 
 // Función para buscar productos en el array cargado
+// function buscarProducto() {
+//     const query = document.getElementById('buscador').value.toLowerCase();
+//     const resultados = document.getElementById('resultados');
+//     resultados.innerHTML = '';
+
+//     if (query.trim() === '') {
+//         return; // Si el input está vacío, no mostrar resultados
+//     }
+
+//     const resultadosFiltrados = productos.filter(producto =>
+//         producto.nombre.toLowerCase().includes(query) ||
+//         (producto.talla && producto.talla.toLowerCase().includes(query)) ||
+//         (producto.descripcion && producto.descripcion.toLowerCase().includes(query))
+//     );
+
+//     if (resultadosFiltrados.length === 0) {
+//         resultados.innerHTML = '<p>No se encontraron productos...</p>';
+//     } else {
+//         resultadosFiltrados.forEach(producto => {
+//             const nombreFormateado = encodeURIComponent(`Me interesa el producto ${producto.nombre}`);
+//             const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}`;
+
+//             const divProducto = document.createElement('div');
+//             divProducto.classList.add('producto');
+//             const imgElement = `<img src="${producto.imagen || 'default-image.jpg'}" alt="${producto.nombre}" onerror="imagenError(this)">`;
+//             divProducto.innerHTML = `
+//                 ${imgElement}
+//                 <div>
+//                     <strong>${producto.nombre}</strong>
+//                     <p>Talla: ${producto.talla || 'N/A'}</p>
+//                     <p>Descripción: ${producto.descripcion || 'N/A'}</p>
+//                     <strong>Precio: S/. ${producto.precio.toFixed(2)}</strong><br>
+//                     <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Comprar</a>
+//                 </div>
+//             `;
+//             resultados.appendChild(divProducto);
+//         });
+//     }
+// }
 function buscarProducto() {
     const query = document.getElementById('buscador').value.toLowerCase();
     const resultados = document.getElementById('resultados');
@@ -154,59 +193,98 @@ function buscarProducto() {
                     <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Comprar</a>
                 </div>
             `;
+            // Agregar evento de clic en la imagen
+            divProducto.querySelector('img').addEventListener('click', function () {
+                localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+                window.location.href = '/detalleProducto.html'; // Redirige a la página de detalles del producto
+            });
+
             resultados.appendChild(divProducto);
         });
     }
 }
 
 
+
 // Función para crear el HTML de un producto
-function createProductItem(product) {
     // Construir dinámicamente el enlace de WhatsApp usando el nombre del producto
-    const nombreFormateado = encodeURIComponent(`Me interesa el producto ${product.nombre}`);
-    const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}!!`;
-
-    return `
-        <div class="gallery-item">
-            <a href="#"><img src="${product.imagen}" alt="${product.nombre}"></a>
-            <div class="product-name">${product.nombre}</div>
-            <div class="product-price">S/ ${product.precio}</div>
-            <a class="ver-producto" href="${whatsappLink}" target="_blank">Mas Info</a>
-        </div>
-    `;
-}
-
+    // function createProductItem(product) {
+    //     const nombreFormateado = encodeURIComponent(`Me interesa el producto ${product.nombre}`);
+    //     const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}!!`;
+    
+    //     // Asegúrate de que `whatsappLink` esté definido y correcto
+    //     console.log('whatsappLink:', whatsappLink);
+    
+    //     // Almacenar el producto y el enlace de WhatsApp en localStorage
+    //     localStorage.setItem('productoSeleccionado', JSON.stringify({
+    //         ...product,
+    //         whatsappLink: whatsappLink
+    //     }));
+    
+    //     return `
+    //         <div class="gallery-item">
+    //             <a href="#"><img src="${product.imagen}" alt="${product.nombre}"></a>
+    //             <div class="product-name">${product.nombre}</div>
+    //             <div class="product-price">S/ ${product.precio}</div>
+    //             <a class="ver-producto" href="${whatsappLink}" target="_blank">Mas Info</a>
+    //         </div>
+    //     `;
+    // }
+    function createProductItem(product) {
+        // Define el enlace de WhatsApp
+        const nombreFormateado = encodeURIComponent(`Me interesa el producto ${product.nombre}`);
+        const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}`;
+    
+        return `
+            <div class=" gallery-item">
+                <img src="${product.imagen || 'default-image.jpg'}" alt="${product.nombre}" onerror="imagenError(this)" class="img-producto" onclick="verDetalles('${encodeURIComponent(JSON.stringify(product))}')">
+                <div class="">
+                    <strong>${product.nombre}</strong>
+                    <p>Talla: ${product.talla || 'N/A'}</p>
+                    <strong style="color:red">S/. ${product.precio.toFixed(2)}</strong><br>
+                    <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Whatapp</a>
+                </div>
+            </div>
+        `;
+    }
+    function verDetalles(productoEncoded) {
+        const producto = JSON.parse(decodeURIComponent(productoEncoded));
+        localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+        window.location.href = '/detalleProducto.html'; // Redirige a la página de detalles del producto
+    }
+    
+    
 
 // Función para cargar la galería de productos desde un archivo JSON específico
 function cargarGaleria(nombreArchivo) {
     return fetch(`/data/${nombreArchivo}?v=1.0`)
         .then(response => response.json())
         .then(products => {
-            const niñosGallery = document.getElementById('niños-gallery');
-            const hombresGallery = document.getElementById('hombres-gallery');
-            const mujeresGallery = document.getElementById('mujeres-gallery');
+            const subcat1Gallery = document.getElementById('subcat1-gallery');
+            const subcat2Gallery = document.getElementById('subcat2-gallery');
+            const subcat3Gallery = document.getElementById('subcat3-gallery');
 
             // Limpiar el contenido actual de las galerías
-            if (niñosGallery) niñosGallery.innerHTML = '';
-            if (hombresGallery) hombresGallery.innerHTML = '';
-            if (mujeresGallery) mujeresGallery.innerHTML = '';
+            if (subcat1Gallery) subcat1Gallery.innerHTML = '';
+            if (subcat2Gallery) subcat2Gallery.innerHTML = '';
+            if (subcat3Gallery) subcat3Gallery.innerHTML = '';
 
             // Llenar la galería de cada categoría si existen en el JSON
-            if (products.niños) {
-                products.niños.forEach(product => {
-                    niñosGallery.innerHTML += createProductItem(product);
+            if (products.subcat1) {
+                products.subcat1.forEach(product => {
+                    subcat1Gallery.innerHTML += createProductItem(product);
                 });
             }
 
-            if (products.hombres) {
-                products.hombres.forEach(product => {
-                    hombresGallery.innerHTML += createProductItem(product);
+            if (products.subcat2) {
+                products.subcat2.forEach(product => {
+                    subcat2Gallery.innerHTML += createProductItem(product);
                 });
             }
 
-            if (products.mujeres) {
-                products.mujeres.forEach(product => {
-                    mujeresGallery.innerHTML += createProductItem(product);
+            if (products.subcat3) {
+                products.subcat3.forEach(product => {
+                    subcat3Gallery.innerHTML += createProductItem(product);
                 });
             }
         })
@@ -281,25 +359,25 @@ if (window.location.pathname.endsWith('stock.html')) {
                 return response.json();
             })
             .then(products => {
-                const niñosGallery = document.getElementById('niños-gallery');
-                const hombresGallery = document.getElementById('hombres-gallery');
-                const mujeresGallery = document.getElementById('mujeres-gallery');
+                const subcat1Gallery = document.getElementById('subcat1-gallery');
+                const subcat2Gallery = document.getElementById('subcat2-gallery');
+                const subcat3Gallery = document.getElementById('subcat3-gallery');
 
-                if (niñosGallery && products.niños) {
-                    products.niños.forEach(product => {
-                        niñosGallery.innerHTML += createProductItem(product);
+                if (subcat1Gallery && products.subcat1) {
+                    products.subcat1.forEach(product => {
+                        subcat1Gallery.innerHTML += createProductItem(product);
                     });
                 }
 
-                if (hombresGallery && products.hombres) {
-                    products.hombres.forEach(product => {
-                        hombresGallery.innerHTML += createProductItem(product);
+                if (subcat2Gallery && products.subcat2) {
+                    products.subcat2.forEach(product => {
+                        subcat2Gallery.innerHTML += createProductItem(product);
                     });
                 }
 
-                if (mujeresGallery && products.mujeres) {
-                    products.mujeres.forEach(product => {
-                        mujeresGallery.innerHTML += createProductItem(product);
+                if (subcat3Gallery && products.subcat3) {
+                    products.subcat3.forEach(product => {
+                        subcat3Gallery.innerHTML += createProductItem(product);
                     });
                 }
             })
@@ -465,3 +543,71 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    buscarProducto();
+    const producto = JSON.parse(localStorage.getItem('productoSeleccionado'));
+
+    if (producto) {
+        // Verifica que whatsappLink esté definido
+        const whatsappLink = producto.whatsappLink;
+        console.log('whatsappLink:', whatsappLink);
+
+        // Cargar las imágenes del producto
+        const carouselInner = document.getElementById('carousel-inner');
+        carouselInner.innerHTML = `
+            <div class="carousel-item active">
+                <img class="w-100 h-100" src="${producto.imagen || 'default-image.jpg'}" alt="${producto.nombre}">
+            </div>    
+        `;
+
+        // Cargar los detalles del producto
+        const detalleProducto = document.getElementById('detalle-producto');
+        detalleProducto.innerHTML = `
+            <h3 class="font-weight-semi-bold" style="color:black">${producto.nombre}</h3>
+            <div class="d-flex mb-3">
+                <div class="text-primary mr-2">
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star"></small>
+                    <small class="fas fa-star-half-alt"></small>
+                    <small class="far fa-star"></small>
+                </div>
+                <small class="pt-1">(50 Reviews)</small>
+            </div>
+            <h3 class="font-weight-semi-bold mb-4" style="color:red">S/. ${producto.precio.toFixed(2)}</h3>
+            <p>Talla: ${producto.talla || 'N/A'}</p>
+            <p class="mb-4">Descripción: ${producto.descripcion || 'No hay descripción disponible'}</p>
+
+            <div class="d-flex align-items-center mb-4 pt-2">
+                <a href="https://wa.me/935909756?" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Pedir en Whatsapp</a>
+            </div>
+        `;
+    } else {
+        // Si no hay producto en localStorage, redirigir al inicio o mostrar un mensaje
+        // window.location.href = '/index.html';
+    }
+});
+
+
+
+// FETCH A TODO EL PROMOCION.JSON
+
+// Cargar el JSON
+fetch('/data/promocion.json')
+.then(response => response.json())
+.then(data => {
+  // Insertar la frase1 en el <span> con id="frase1"
+  document.getElementById('frase1').textContent = data.frase1;
+  document.getElementById('frase2').textContent = data.frase2;
+  document.getElementById('slide1').src = data.slide1;
+  document.getElementById('slide2').src = data.slide2;
+  document.getElementById('slide3').src = data.slide3;
+
+})
+.catch(error => console.error('Error al cargar el JSON:', error));
+
+//Añadir mas codigo aca de bajo sobre promocion.json
+
+
+/////////////////////////////////////////////////////////////////////

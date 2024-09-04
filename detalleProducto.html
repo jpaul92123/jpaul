@@ -35,8 +35,9 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid mt-4">
-        <p class="enviosgratis" style="color:white; margin-top: -18px; ">-- Envios gratis en Lima por compras mayores a
-            S/.100 --</p>
+        <i class="fas fa-fire icon-fire"></i>
+        <span id="frase1"></span>
+        <i class="fas fa-fire icon-fire"></i>
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="/index.html" class="text-decoration-none">
@@ -73,7 +74,9 @@
                 </ul>
             </li>
         </ul>
-        <p class="enviosgratis">Envios gratis por compras mayores a S/.100</p>
+        <i class="fas fa-fire icon-fire"></i>
+        <span id="frase2"></span>
+        <i class="fas fa-fire icon-fire"></i>
     </nav>
 
     <!-- Navbar Start -->
@@ -138,11 +141,28 @@
                     <div id="resultados" class="container overlay overlay-content"></div>
                     <!-- fin Cuerpo del buscador -->
                     <section id="defaultOpen">
-                        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                            <!-- Cuerpo del buscador -->
-                            <div id="resultados" class="container overlay overlay-content"></div>
-                            <!-- fin Cuerpo del buscador -->
+                        <div class="container-fluid py-5">
+                            <div class="row row-cols-md-2 px-xl-5">
+                                <div class="col-lg-5 pb-5">
+                                    <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner border" id="carousel-inner">
+                                            <!-- Aquí se cargarán las imágenes -->
+                                        </div>
+                                        <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                                            <i class="fa fa-2x fa-angle-left text-dark"></i>
+                                        </a>
+                                        <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                                            <i class="fa fa-2x fa-angle-right text-dark"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-lg-7 pb-5" id="detalle-producto">
+                                    <!-- Aquí se cargará la información del producto -->
+                                </div>
+                            </div>
                         </div>
+                       
 
                     </section>
 
@@ -153,14 +173,7 @@
     </div>
 
     <!-- Featured End -->
-    <!-- detalle de producto -->
-  
-
-
-
-    <!-- Fin detalle de producto  -->
-
-
+ 
     <!-- Productos Section -->
     <div class="container-fluid py-5">
         <div class="text-center mb-4">
@@ -243,10 +256,7 @@
     <script src="/js/script.js"></script>
     <script src="/js/menu-categorias.js"></script>
     <script>
-        if (window.location.pathname.endsWith('/stock') || window.location.pathname.endsWith('/index')) {
-            window.location.href = window.location.pathname + '.html';
-        }
-
+       
     </script>
 
 </body>
